@@ -14,6 +14,9 @@ const verb = ["ran", "walked", "jumped", "shuffled", "bounced"]
 const preposition = ["to", "from", "towards", "away from", "down", "up"]
 const the = "the"
 const noun = ["house", "garage", "school", "turtle", "koala", "meerkat"]
+const button = document.getElementById('button')
+const outputElement = document.getElementById('gen-sen-head');
+const generatedSentence = document.getElementsByClassName('generated-sentence')[0]
 
 
 const giveJoke = (array) => {
@@ -43,3 +46,9 @@ const sentence = () => {
 }
 
 console.log("Here's a randomly generated sentence: "+sentence()+"\nHere's a randomly selected corny joke: "+giveJoke(cornyJokes))
+
+
+button.addEventListener('click', function() {
+    outputElement.innerHTML = sentence();
+    generatedSentence.style.visibility = 'visible'    
+})
